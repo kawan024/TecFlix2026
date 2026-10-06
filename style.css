@@ -28,13 +28,66 @@ header {
     align-items: center;
     text-align: center;
     padding: 20px;
+    width: 100%;
+    max-width: 1100px;
+}
+
+/* Layout flexível para alinhar vídeo e roteiro lado a lado */
+.video-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 30px;
+    width: 100%;
+    margin-top: 25px;
+}
+
+/* Coluna do Vídeo */
+.video-box {
+    flex: 1 1 560px;
 }
 
 iframe {
+    width: 100%;
     max-width: 100%;
     border: none;
     border-radius: 8px;
-    margin-top: 15px;
+}
+
+/* Coluna do Roteiro */
+.roteiro-box {
+    flex: 1 1 380px;
+    background-color: #111111;
+    border: 1px solid #333333;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: left;
+    color: #ffffff;
+}
+
+.roteiro-box h3 {
+    color: rgb(245, 175, 90);
+    margin-bottom: 12px;
+    font-size: 1.4rem;
+}
+
+.roteiro-box h4 {
+    color: rgb(245, 175, 90);
+    margin-top: 18px;
+    margin-bottom: 8px;
+    font-size: 1.1rem;
+}
+
+.roteiro-box p,
+.roteiro-box ul {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #dddddd;
+}
+
+.roteiro-box ul {
+    padding-left: 20px;
 }
 
 /* Classes de Estilo da Fonte */
@@ -50,4 +103,17 @@ iframe {
   font-weight: 700;
   font-style: normal;
   font-size: 2.5rem;
+}
+
+/* Ajuste automático para telas menores (celulares e tablets) */
+@media (max-width: 850px) {
+    .video-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .video-box,
+    .roteiro-box {
+        width: 100%;
+    }
 }
